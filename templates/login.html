@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static '/css/login.css' %}" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="/user/" method="POST">
+            {% csrf_token %}
+            <div class="container">
+                <h1>Login</h1>
+                <div class="item">
+                    <div><label for="">User Name</label></div>
+                    <div id="inputStyle"><i class="fa-solid fa-user"></i><input type="text" placeholder="Username" name="firstname" required/></div>
+                </div>
+                <div class="item">
+                    <div><label for="">Password</label></div>
+                    <div id="inputStyle"><i class="fa-solid fa-lock"></i><input type="text" placeholder="Password" name="password" required/></div>
+                    <a href="#"><p id="passwords">Forgot Password</p></a>
+                </div>
+                <div class="item"><button>LOGIN</button></div>
+                <div class="item">
+                    <a href="#"><p>or sign up using</p></a>
+                </div>
+                <div class="item">
+                    <i class="fa-brands fa-facebook"></i><i class="fa-brands fa-x-twitter"></i
+                    ><i class="fa-brands fa-google"></i>
+                </div>
+                {% if messages %}
+                <div class="messages">
+                    {% for message in messages%}
+                    <p {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </form>
+    </body>
+</html>

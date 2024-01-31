@@ -1,0 +1,83 @@
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,800;1,300;1,400&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+h1{
+    color: #000;
+    text-align: center;
+    font-weight: 600;
+    padding: 13px 0;
+}
+body{
+    background-image: url('/static/images/img2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.container{
+    height: 70vh;
+    width: 26vw;
+    background-color: white;
+    margin: auto;
+    display: flex;
+    box-shadow: 1px 1px 10px rgb(6, 38, 146);
+    flex-direction: column;
+    margin-top: 50px;
+    align-items: center;
+    gap: 30px;
+}
+
+.item:nth-of-type(5){
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.item:nth-of-type(5) i{
+    transition: 100ms;
+}
+.item:nth-of-type(5) i:hover{
+    color: rgb(0, 106, 255);
+}
+
+.item input{
+    width: 280px;
+    height: 33px;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    padding-left: 10px;
+}
+.item button{
+    width: 280px;
+    height: 33px;
+    background-color: rgb(154, 78, 224);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: 500ms;
+}
+.item button:hover{
+    background-color: rgb(225, 179, 123);
+}
+.item label{
+    font-size: 14px;
+}
+.item label:hover{
+    color: rgb(154, 78, 224);
+}
+
+#passwords{
+    font-size: 10px;
+    text-align: end;
+    padding: 5px 0;
+}

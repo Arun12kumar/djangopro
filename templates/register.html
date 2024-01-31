@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <title>register</title>
+</head>
+
+<body>
+    <h1>STUDENT REGISTRATION FORM</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        {%csrf_token%}
+        <div class="container">
+            <div class="item1">
+                <div class="input_list"><div><label >First Name :</label></div><input type="text" id="inputs" placeholder="First Name" name="firstname"></div>
+                <div class="input_list"><div><label >Last Name :</label></div><input type="text" id="inputs" placeholder="Last Name" name="lastname"></div>
+                <div class="input_list"><div><label >Email :</label></div><input type="text" id="inputs" placeholder="Email" name="email"></div>
+                <div class="input_list"><div><label >Phone :</label></div><input type="number" id="inputs" placeholder="Phone Number" name="phone"></div>
+                <div class="input_list"><div><label >Password :</label></div><div class="passin"><input type="text" placeholder="New password" id="pass" name="password"><input type="text" id="pass" placeholder="Confirm Password"></div></div>
+                <div class="input_list"><label >Gender :</label> <span><input type="radio" name="gender" value="male">Male</span><span><input type="radio" name="gender" value="female">Female</span></div>
+                <div class="input_list"><button>SUBMIT</button></div>
+            </div>
+            <div class="item2"></div>
+        </div>
+    </form>
+</body>
+</html>

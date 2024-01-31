@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 1000px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            margin: auto;
+
+        }
+
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+
+        th,
+        td {
+            padding: 8px 18px;
+        }
+
+        td {
+            border-left: 1px solid #000;
+        }
+
+        td:nth-of-type(11) {
+            border-right: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        {% csrf_token%}
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>first name</th>
+                    <th>last name</th>
+                    <th>Phone number</th>
+                    <th>Email</th>
+                    <th>password</th>
+                    <th>gender</th>
+                    <th>View</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                    <th>create</th>
+                </tr>
+                {% for i in cr %}
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{i.id}} </td>
+                    <td>{{i.firstname}}</td>
+                    <td>{{i.lastname}}</td>
+                    <td>{{i.email}} </td>
+                    <td>{{i.phone}}</td>
+                    <td>{{i.password}}</td>
+                    <td>{{i.gender}}</td>
+                    <td><a href="{% url 'detailed' i.id %}">view</a></td>
+                    <td><a href="{% url 'deleted' i.id %}">delete</a></td>
+                    <td><a href="{% url 'edited' i.id %}">edit</a></td>
+                    <td><a href="/">create</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </form>
+</body>
+
+</html>
